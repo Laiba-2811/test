@@ -1,0 +1,42 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Blog
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h3 class=" bg-info text-center p-2">Make your Profile</h3>
+<form method="post" action="/Home/SignUp" >
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="container text-center">
+        <div>
+            <label class="form-label" asp-for="Name"></label><br>
+            @Html.TextBox("Name")
+            @*<input class="form-control" style="width:200px" asp-for="Name"><br>*@
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Age"></label><br>
+            @Html.TextBox("Age")
+            @*<input class="form-control" style="width:200px" asp-for="Age"><br>*@
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Email"></label><br>
+            @Html.TextBox("Email")
+            @*<input class="form-control " style="width:200px" asp-for="Email"><br />*@
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Password"></label><br>
+            @Html.Password("Password")
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="ConfirmPassword"></label><br>
+            @Html.Password("ConfirmPassword")
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <br>
+        <br>
+        <input class="btn btn-success" style="width:80px" type="submit" value="Signup">
+    </div>
+</form>

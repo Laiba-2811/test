@@ -1,0 +1,31 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Blog
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="BlogView">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="ProfileView">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="BlogView">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<p class="text-warning text-lg-center"> <b>Welcome to this Exciting Application.</b><br /> </p>
+<p class="text-danger text-center">Connect yourself to world around you and share your memomrable moments with others.</p>

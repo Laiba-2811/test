@@ -1,0 +1,26 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Login
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h3 class=" bg-secondary text-center p-2">Login</h3>
+<form method="post" action="/Home/Login">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="container text-center">
+        <div>
+            <label class="form-label" asp-for="Email"></label><br>
+            @Html.TextBox("Email")
+            @*<input class="form-control " style="width:200px" asp-for="Name"><br>*@
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Password"></label><br>
+            @Html.Password("Password")
+            @*<input class="form-control " style="width:200px" asp-for="Email"><br />*@
+            <span asp-validation-for="Password"></span>
+        </div>
+        <br>
+        <br>
+        <input class="btn btn-success" style="width:80px" type="submit" value="Login">
+    </div>
+</form>

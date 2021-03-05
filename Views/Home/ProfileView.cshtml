@@ -1,0 +1,101 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Profile
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="BlogView">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="ProfileView">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 pb-5">
+            <!-- Account Sidebar-->
+            <div class="author-card pb-3">
+                @*<div class="author-card-cover" style="background-image: url(https://demo.createx.studio/createx-html/img/widgets/author/cover.jpg);"><a class="btn btn-style-1 btn-white btn-sm" href="#" data-toggle="tooltip" title="" data-original-title="You currently have 290 Reward points to spend"><i class="fa fa-award text-md"></i>&nbsp;290 points</a></div>*@
+                <div class="author-card-profile">
+                    <div class="author-card-avatar">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Daniel Adams">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!----->
+        <div class="col-lg-8 pb-5">
+            <form class="row" method="post" action="/Home/ProfileView">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="Name">Name</label>
+                        <input class="form-control" type="text" asp-for="Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="Email">E-mail Address</label>
+                        <input class="form-control" type="email" asp-for="Email"  />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="PhoneNo">Phone Number</label>
+                        <input class="form-control" type="text" asp-for="PhoneNo">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="Image">Profile Image</label>
+                        <input class="form-control" type="file" asp-for="Image" value="Image">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="@Model.Password">Old Password</label>
+                        <input class="form-control" asp-for="@Model.Password">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="NewPassword">New Password</label>
+                        <input class="form-control" type="password" asp-for="NewPassword">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label" asp-for="ConfirmPassword">Confirm Password</label>
+                            <input class="form-control" type="password" asp-for="ConfirmPassword">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <hr class="mt-2 mb-3">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+
+                            <input class="btn btn-style-1 btn-primary" type="submit" value="Update" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly." />
+                        </div>
+                    </div>
+            </form>
+        </div>
+
+        </div>
+    </div>

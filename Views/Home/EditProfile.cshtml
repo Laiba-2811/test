@@ -1,0 +1,37 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Profile
+@{ Layout = "/Views/Shared/_Layout.cshtml"; }
+<section class="container-fluid p-lg-2">
+
+    <form method="post" action="/UsersView/Admin">
+        <div class="text-center mb-3" asp-validation-summary="ModelOnly"></div>
+
+        <div class="mb-3">
+            <label class="col-form-label" asp-for="@Model.Name">Name</label>
+            <input class="form-control" asp-for="@Model.Name" />
+            <span asp-validation-for="@Model.Name"></span>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" asp-for="@Model.Email">Email</label>
+            <input class="form-control" asp-for="@Model.Email" />
+            <span asp-validation-for="@Model.Email"></span>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" asp-for="@Model.Password">Password</label>
+            <input class="form-control" asp-for="@Model.Password" />
+            <span asp-validation-for="@Model.Password"></span>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" asp-for="NewPassword">NewPassword</label>
+            <input class="form-control" asp-for="NewPassword" />
+            <span asp-validation-for="NewPassword"></span>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" asp-for="@Model.ConfirmPassword">Confirm Password</label>
+            <input class="form-control" asp-for="@Model.ConfirmPassword" />
+            <span asp-validation-for="@Model.NewPassword"></span>
+        </div>
+        <input class="btn btn-primary" type="submit" id="btnSubmit" value="Update User Profile" asp-route-id="@Model.ID" />
+    </form>
+</section>
+

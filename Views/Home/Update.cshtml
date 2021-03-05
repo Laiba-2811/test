@@ -1,0 +1,22 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Post
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h3 class=" bg-secondary text-center p-2"> Profile</h3>
+<form method="post" action="/Home/Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label class="form-label" asp-for="Title">Title</label><br>
+        <input class="form-control" style="width:350px" asp-for="Title"><br>
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div>
+        <label class="form-label" asp-for="Content">Content</label><br>
+        <textarea id="post" name="post" rows="8" cols="50" asp-for="Content"></textarea>
+        <span asp-validation-for="Content"></span>
+    </div>
+    <div class="text-lg-left">
+        <input class="btn btn-outline-info" style="width:80px" type="submit" value="Update">
+    </div>
+</form>

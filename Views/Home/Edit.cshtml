@@ -1,0 +1,47 @@
+﻿@using BlogApplication_Mcsf19a002.Models
+@model Post
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="BlogView">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="ProfileView">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h3 class=" bg-secondary text-center p-2"> Edit Your Post</h3>
+<form method="post" action="/Home/Edit">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label class="form-label" asp-for="@Model.Title">Title</label><br>
+        <input class="form-control" style="width:350px" asp-for="@Model.Title"><br>
+        <span asp-validation-for="@Model.Title"></span>
+    </div>
+    <div>
+        <label class="form-label" asp-for="@Model.Content">Content</label><br>
+        <textarea rows="8" cols="50" asp-for="@Model.Content"></textarea>
+        <span asp-validation-for="@Model.Content"></span>
+    </div>
+    <div class="text-lg-left">
+        <input class="btn btn-outline-info" style="width:80px" type="submit"  asp-route-id="@Model.ID" value="Update">
+    </div>
+</form>
+

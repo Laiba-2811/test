@@ -1,0 +1,38 @@
+﻿@model List<BlogApplication_Mcsf19a002.Models.Blog>
+@using BlogApplication_Mcsf19a002.Controllers
+@{ Layout = "/Views/Shared/_Layout.cshtml"; }
+<div class="text-center">Users Profiles</div>
+@if (Model != null)
+{
+    foreach (BlogApplication_Mcsf19a002.Models.Blog p in Model)
+    {
+        
+<table class="table table-light table-hover table-striped">
+    <thead>
+        
+        <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@p.ID</td>
+            <td>@p.Name</td>
+            <td>@p.Email</td>
+            <td>@p.Password</td>
+            <td class="text-center">
+                <a class="btn btn-info" asp-action="ProfileView" asp-route-id="@p.ID">View Profile</a>
+                <a class="btn btn-secondary" asp-action="EditProfile" asp-route-id="@p.ID">Edit Profile</a>
+                <a class="btn btn-warning" asp-action="RemoveAccount" asp-route-id="@p.ID">Remove Account</a>
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+        
+     }
+}
